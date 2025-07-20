@@ -116,12 +116,4 @@ Feel free to:
 
 ```
 
----
 
-🎉 Let me know if you'd like:
-
-- **Screenshots or GIF embeds** to showcase the UI  
-- **Deployment instructions** (Heroku, Render, Vercel)  
-- **Badge icons** for license, build status, etc.
-::contentReference[oaicite:0]{index=0}
-```
