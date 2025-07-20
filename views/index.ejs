@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <header>
+ <div class="navbar">
+  <h1 class="logo">🔗 URL Shortener</h1>
+  <% if (!locals.token) { %>
+    <div class="auth-buttons">
+      <button id="openLogin" class="nav-btn">Log In</button>
+      <button id="openSignup" class="nav-btn">Sign Up</button>
+    </div>
+  <% } %>
+   <% if (locals.token) { %>
+    <form action="/user/logout" method="POST">
+      <button type="submit" class="nav-btn logout-btn">Log Out</button>
+    </form>
+  <% } %>
+</div>
+
+  </header>
+
+  <main>
+    <div class="container">
+      <form method="POST" action="/urls" class="main-form">
+        <label>Enter Your Original URL</label>
+        <input type="text" name="url" placeholder="https://www.google.com" required/>
+        <button type="submit">Generate</button>
+      </form>
+
+      <% if (locals.shortId) { %>
+      <div class="result-card">
+        <h2>✅ Short URL Generated!</h2>
+        <p>
+          <strong>Your Short URL:</strong><br/>
+          <a href="http://localhost:5000/urls/<%= shortId %>" target="_blank" class="short-link">
+            http://localhost:5000/urls/<%= shortId %>
+          </a>
+        </p>
+      </div>
+      <% } %>
+
+      <% if (locals.urls) { %>
+      <div class="table-container">
+        <h2>📋 All Shortened URLs</h2>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Sr. No</th>
+              <th>Redirect URL</th>
+              <th>Short ID</th>
+              <th>Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% urls.forEach((url, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><a href="<%= url.redirectUrl %>" class="table-link" target="_blank"><%= url.redirectUrl %></a></td>
+                <td><a href="http://localhost:5000/urls/<%= url.shortId %>" class="short-id-link" target="_blank"><%= url.shortId %></a></td>
+                <td><%= url.visitHistory.length %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+      <% } %>
+    </div>
+  </main>
+
+  <!-- Login Modal -->
+  <%- include('partials/login') %>
+
+  <!-- Signup Modal -->
+  <%- include('partials/signup') %>
+
+  <script src="/script.js">
+    
+  </script>
+</body>
+</html>
