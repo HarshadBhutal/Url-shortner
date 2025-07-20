@@ -14,7 +14,6 @@ It allows users to create short links, manage them, and view analytics after log
 
 - 🔐 **User Authentication** — Sign Up, Login, Logout  
 - ✂️ **URL Shortening** — Generate short links for long URLs  
-- 🛠️ **Custom Short Aliases** — Users can specify their own short codes  
 - 📊 **Analytics Dashboard** — Track clicks, timestamps, and referrers  
 - 🧠 Built with **Express**, **MongoDB**, and **EJS**  
 - 🔄 **Clean & Modular** — Follows an organized project structure
@@ -49,7 +48,7 @@ npm install
 3. **Create a `.env` file** in the project root:
 
 ```env
-PORT=3000
+PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
@@ -59,10 +58,12 @@ JWT_SECRET=your_secret_key
 4. **Start the server**
 
 ```bash
-node app.js
+node index.js
+or
+npm start
 ```
 
-5. **Open your browser** and go to `http://localhost:3000`
+5. **Open your browser** and go to `http://localhost:5000`
 
 ---
 
@@ -70,15 +71,19 @@ node app.js
 
 ```
 Url-shortner/
-├── public/             # Static files: CSS, client-side JS
-├── routes/             # Express route handlers (auth, URL, analytics)
-├── models/             # Mongoose schemas (User, URL, Analytics)
-├── views/              # EJS templates
-├── .env                # Environment variables (not committed)
+├── Routes/
+├── controller/
+├── middleware/
+├── model/
+├── public/
+├── views/
+├── .env
 ├── .gitignore
-├── LICENSE             # MIT License
-├── app.js              # Main application file
-└── package.json        # Project metadata and dependencies
+├── index.js
+├── package-lock.json
+├── package.json
+└── README.md
+
 ```
 
 ---
