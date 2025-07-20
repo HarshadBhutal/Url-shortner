@@ -7,7 +7,5 @@ router.post("/",handleGenerateNewShortUrl)
 
 router.get("/:id",handleredirect)
 
-// urlRouter.get("/analytics/:shortId",handleAnalytics)
-
 
 module.exports=router;
