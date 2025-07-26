@@ -26,7 +26,7 @@ async function handleLogin(req,res){
   const {email,password}=req.body;
   const user=await User.findOne({email:email,password:password})
   if(!user) {
-      return res.render("login");
+      return res.redirect("/");
   }
   
   const token= setUser(user)
