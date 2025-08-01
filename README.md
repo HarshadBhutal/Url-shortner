@@ -9,14 +9,7 @@ It allows users to create short links, manage them, and view analytics after log
 
 🔗 URL Shortener Screenshots
 
-📸 Generate Short URL
-
-![Generate URL](assets/Screenshot9.png)
-
-📊 View All Shortened URLs
-
-![Shortened URLs Table](assets/Screenshot10.png)
-
+     you can check the assests folder
 
 
 ✨ Features
