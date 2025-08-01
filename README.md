@@ -7,7 +7,10 @@
 A full-stack URL shortener built with Node.js, Express, MongoDB, and EJS.  
 It allows users to create short links, manage them, and view analytics after logging in.
 
----
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c164a63d-a2d9-4dec-bcd9-029e2e6587a6" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76f70a77-a71b-477b-a3cc-58af1c58a226" />
+
+
 
 ✨ Features
 
@@ -17,7 +20,6 @@ It allows users to create short links, manage them, and view analytics after log
 - 🧠 Built with Express, MongoDB, and EJS  
 - 🔄 Clean & Modular — Follows an organized project structure
 
----
 
 🛠 Tech Stack
 
@@ -27,13 +29,12 @@ It allows users to create short links, manage them, and view analytics after log
 - Templating: EJS  
 - Configuration: dotenv for environment variables  
 
----
 
 🚀 Installation & Running Locally
 
 1. Clone the repo
 
-```bash
+bash
 git clone https://github.com/HarshadBhutal/Url-shortner.git
 cd Url-shortner
 ````
