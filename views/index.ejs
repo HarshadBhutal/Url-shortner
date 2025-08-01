@@ -12,7 +12,7 @@
   <h1 class="logo">🔗 URL Shortener</h1>
   <% if (!locals.token) { %>
     <div class="auth-buttons">
-      <button id="openLogin" class="nav-btn">Log In</button>
+      <button id="openLogin" class="nav-btn" >Log In</button>
       <button id="openSignup" class="nav-btn">Sign Up</button>
     </div>
   <% } %>
@@ -72,12 +72,6 @@
       <% } %>
     </div>
   </main>
-
-  <!-- Login Modal -->
-  <%- include('partials/login') %>
-
-  <!-- Signup Modal -->
-  <%- include('partials/signup') %>
 
   <script src="/script.js">
     

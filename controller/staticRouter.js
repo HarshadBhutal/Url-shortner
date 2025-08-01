@@ -21,5 +21,10 @@ async function homepage(req,res){
     }
    
 }
-
-module.exports={homepage}
+async function login(req,res){
+    res.render("login")
+}
+async function signup(req,res){
+    res.render("signup")
+}
+module.exports={homepage,login,signup}
