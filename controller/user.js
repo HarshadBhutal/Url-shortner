@@ -9,17 +9,18 @@ async function handleSignup(req,res){
     const {username,email,password}=req.body;
     const user=await User.findOne({email:email})
      if(!user){
-        await User.create({
+        const newUser=await User.create({
         username:username,
         email:email,
         password:password
     })
     
+     const token= setUser(newUser)
+     res.cookie("uid",token,{SameSite:"Strict"})
+     return res.redirect("/")
+    
   }
-  else{
-      return res.redirect("/")
-    }
-    return res.render("login")
+      res.redirect("/signup")
 }
 
 async function handleLogin(req,res){

@@ -9,7 +9,7 @@ async function handleGenerateNewShortUrl(req,res){
     if(!req.user){
       
       await Url.create({
-        shortId:`http://localhost:5000/urls/${short_Id}`,
+        shortId:short_Id,
         redirectUrl:body.url,
         visitHistory:[],
         
@@ -17,7 +17,7 @@ async function handleGenerateNewShortUrl(req,res){
       return res.redirect(`/?created=${short_Id}`)
     }
     await Url.create({
-        shortId:`http://localhost:5000/urls/${short_Id}`,
+        shortId:short_Id,
         redirectUrl:body.url,
         visitHistory:[],
         createdBy:req.user._id
@@ -29,7 +29,7 @@ async function handleGenerateNewShortUrl(req,res){
 async function handleredirect(req,res){
     const id=req.params.id;
     const main_url=await Url.findOneAndUpdate(
-        {shortId:`http://localhost:5000/urls/${id}`},
+        {shortId:id},
         {$push:{
              visitHistory:{
                 timestamp:Date.now(),

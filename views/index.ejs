@@ -27,27 +27,31 @@
 
   <main>
     <div class="container">
-      <form method="POST" action="/urls" class="main-form">
-        <label>Enter Your Original URL</label>
-        <input type="text" name="url" placeholder="https://www.google.com" required/>
-        <button type="submit">Generate</button>
-      </form>
+        <form method="POST" action="/urls" class="main-form">
+         <label for="urlInput">Enter Your Original URL</label>
+         <div class="url-input-group">
+           <input type="text" id="urlInput" name="url" placeholder="https://www.google.com" required />
+           <button type="submit">Generate</button>
+         </div>
+     </form>
+
 
       <% if (locals.shortId) { %>
-      <div class="result-card">
-        <h2>✅ Short URL Generated!</h2>
-        <p>
-          <strong>Your Short URL:</strong><br/>
-          <a href="http://localhost:5000/urls/<%= shortId %>" target="_blank" class="short-link">
-            http://localhost:5000/urls/<%= shortId %>
-          </a>
-        </p>
-      </div>
-      <% } %>
+        <div class="short-url-box">
+          <h2>✅ Short URL Generated!</h2>
+          <div class="short-url-content">
+            <input type="text" id="shortLinkInput" value="http://localhost:5000/urls/<%= shortId %>" readonly />
+            <button id="copyBtn" title="Copy to clipboard">📋</button>
+          </div>
+          <span id="copyMsg" class="copy-msg"></span>
+        </div>
+     <% } %>
+
 
       <% if (locals.urls) { %>
       <div class="table-container">
         <h2>📋 All Shortened URLs</h2>
+        <button onclick="window.location.reload()" class="refresh-btn">🔄 Refresh Stats</button>
         <table class="styled-table">
           <thead>
             <tr>
@@ -62,7 +66,7 @@
               <tr>
                 <td><%= index + 1 %></td>
                 <td><a href="<%= url.redirectUrl %>" class="table-link" target="_blank"><%= url.redirectUrl %></a></td>
-                <td><a href="http://localhost:5000/urls/<%= url.shortId %>" class="short-id-link" target="_blank"><%= url.shortId %></a></td>
+                <td><a href="http://localhost:5000/urls/<%= url.shortId %>" class="short-id-link" target="_blank">http://localhost:5000/urls/<%= url.shortId %></a></td>
                 <td><%= url.visitHistory.length %></td>
               </tr>
             <% }) %>
