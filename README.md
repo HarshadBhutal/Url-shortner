@@ -89,11 +89,11 @@ Url-shortner/
 
 🧪 Future Enhancements
 
- 📱 Responsive design and mobile friendliness
- 🔐 OAuth Login (e.g., Google, GitHub)
- 🧾 QR code generation for each short URL
- 📉 Advanced Analytics (e.g., charts, geographic data)
- 🛡️ Admin dashboard for moderating users/links
+  📱 Responsive design and mobile friendliness
+  🔐 OAuth Login (e.g., Google, GitHub)
+  🧾 QR code generation for each short URL
+  📉 Advanced Analytics (e.g., charts, geographic data)
+  🛡️ Admin dashboard for moderating users/links
 
 ---
 
