@@ -1,3 +1,11 @@
+🔗 url-shortner
+
+URL generator:-
+
+![url-g](assets/Screenshot9.png)
+
+URL generator with Analytics
+![url-a](assets/Screenshot10.png)
 
 ---
 
@@ -6,10 +14,6 @@
 
 A full-stack URL shortener built with Node.js, Express, MongoDB, and EJS.  
 It allows users to create short links, manage them, and view analytics after logging in.
-
-🔗 URL Shortener Screenshots
-
-     you can check the assests folder
 
 
 ✨ Features
