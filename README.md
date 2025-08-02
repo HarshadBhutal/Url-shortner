@@ -1,10 +1,8 @@
 🔗 url-shortner
 
-URL generator:-
 
 ![url-g](assets/Screenshot9.png)
 
-URL generator with Analytics
 ![url-a](assets/Screenshot10.png)
 
 ---
